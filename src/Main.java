@@ -89,8 +89,8 @@ public class Main {
                 } catch (URISyntaxException e) {
                     throw new RuntimeException(e);
                 }
-                System.out.println("sleep\n");
-                Thread.sleep(Duration.ofSeconds(5));
+                System.out.println("sleeping\n");
+                Thread.sleep(Duration.ofMinutes(2));
             }
         } catch (IOException e) {
             System.out.println("IOException fuck");
