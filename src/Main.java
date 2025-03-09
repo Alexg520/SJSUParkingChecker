@@ -80,7 +80,7 @@ public class Main {
                     String template = "%d,%d,%d,%d,%d\n";
                     outWriter.write(String.format(template, (System.currentTimeMillis()/1000L), map.get("South Garage"), map.get("West Garage"), map.get("North Garage"), map.get("South Campus Garage")));
                     outWriter.flush();
-                    System.out.println("flushed o_o");
+                    System.out.println("saved to file");
                     System.out.printf((template), (System.currentTimeMillis()/1000L), map.get("South Garage"), map.get("West Garage"), map.get("North Garage"), map.get("South Campus Garage"));
                 }
                 catch(RuntimeException e){
@@ -93,9 +93,9 @@ public class Main {
                 Thread.sleep(Duration.ofMinutes(2));
             }
         } catch (IOException e) {
-            System.out.println("IOException fuck");
+            System.out.println("IOException");
         } catch (InterruptedException e) {
-            System.out.println("Woke");
+            System.out.println("InterruptedException");
         }
     }
 }
