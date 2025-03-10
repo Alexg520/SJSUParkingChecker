@@ -12,3 +12,11 @@ sourceSets {
         }
     }
 }
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'Main'
+        )
+    }
+}
