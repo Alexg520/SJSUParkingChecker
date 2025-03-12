@@ -60,9 +60,11 @@ public class Main {
 
         try (FileWriter outWriter = new FileWriter(out, true)) {
             if (!exists) {
+                System.out.println("Creating " + out.getAbsolutePath());
                 outWriter.write("TIMESTAMP,SOUTH,WEST,NORTH,SOUTH CAMPUS\n");
                 outWriter.flush();
             }
+            System.out.println("Writing...");
 
             int fucked = 0;
             //noinspection InfiniteLoopStatement
