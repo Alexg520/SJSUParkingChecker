@@ -12,7 +12,6 @@ import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
 import java.time.Duration;
 import java.util.HashMap;
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -52,12 +51,6 @@ public class Main {
         return br.lines().collect(Collectors.joining());
     }
 
-    public static int userInput(){
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Delay (Minutes):");
-        return sc.nextInt();
-    }
-
     public static void main(String[] args) throws URISyntaxException, IOException, NoSuchAlgorithmException, KeyManagementException {
 
         disableValidation();
@@ -73,7 +66,14 @@ public class Main {
                 outWriter.flush();
             }
 
-            int delay = userInput();
+            int delay;
+            if (args.length == 0){
+                delay = 10;
+            }
+            else{
+                delay = Integer.parseInt(args[0]);
+            }
+
             int fucked = 0;
             //noinspection InfiniteLoopStatement
             while (true) {
